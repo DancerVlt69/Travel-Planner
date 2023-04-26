@@ -1,0 +1,112 @@
+﻿<timetable station="Frankfurt Hbf (tief)" eva="8098105">
+  <s id="3364013991594594147-2304250932-10" eva="8098105">
+    <m id="r1933345" t="h" from="2304180000" to="2305312359" cat="Information" ts="2304211702" ts-tts="23-04-24 23:16:12.032" pr="3"/>
+    <ar ct="2304251013" l="1">
+      <m id="r147938433" t="d" c="45" ts="2304250950" ts-tts="23-04-25 09:50:19.875"/>
+    </ar>
+    <dp ct="2304251014" l="1">
+      <m id="r147938433" t="d" c="45" ts="2304250950" ts-tts="23-04-25 09:50:19.875"/>
+    </dp>
+  </s>
+  <s id="2015307328100839039-2304250943-11" eva="8098105">
+    <ar ct="2304251011" l="6"/>
+    <dp ct="2304251012" l="6"/>
+  </s>
+  <s id="1916205942278448911-2304250933-13" eva="8098105">
+    <m id="r1933345" t="h" from="2304180000" to="2305312359" cat="Information" ts="2304211702" ts-tts="23-04-24 23:16:12.033" pr="3"/>
+    <ar ct="2304251009" l="2"/>
+    <dp ct="2304251010" l="2"/>
+  </s>
+  <s id="8133436032268572771-2304250953-6" eva="8098105">
+    <m id="r1933345" t="h" from="2304180000" to="2305312359" cat="Information" ts="2304211702" ts-tts="23-04-24 23:16:12.033" pr="3"/>
+    <ar ct="2304251005" l="6"/>
+    <dp ct="2304251006" l="6"/>
+  </s>
+  <s id="7308930480701339013-2304250917-15" eva="8098105">
+    <ar ct="2304250956" l="6">
+      <m id="r147938142" t="d" c="43" ts="2304250944" ts-tts="23-04-25 09:44:33.042"/>
+    </ar>
+    <dp ct="2304250958" l="6">
+      <m id="r147938142" t="d" c="43" ts="2304250944" ts-tts="23-04-25 09:44:33.042"/>
+    </dp>
+  </s>
+  <s id="-6846568482069049835-2304250928-19" eva="8098105">
+    <m id="r1933345" t="h" from="2304180000" to="2305312359" cat="Information" ts="2304211702" ts-tts="23-04-24 23:16:12.032" pr="3"/>
+    <m id="r1933315" t="h" from="2304180000" to="2305302359" cat="Information" ts="2304211703" ts-tts="23-04-24 23:16:11.952" pr="3"/>
+    <ar ct="2304251012" l="1"/>
+    <dp ct="2304251013" l="1"/>
+  </s>
+  <s id="-5915938565235357293-2304250934-14" eva="8098105">
+    <ar ct="2304251006" l="2"/>
+    <dp ct="2304251007" l="2"/>
+  </s>
+  <s id="-5422259569874389456-2304250913-19" eva="8098105">
+    <ar ct="2304250956" l="1">
+      <m id="r147937874" t="d" c="43" ts="2304250938" ts-tts="23-04-25 09:38:13.122"/>
+    </ar>
+    <dp ct="2304250957" l="1">
+      <m id="r147937874" t="d" c="43" ts="2304250938" ts-tts="23-04-25 09:38:13.122"/>
+    </dp>
+  </s>
+  <s id="-5414405666250118179-2304250909-13" eva="8098105">
+    <m id="r109766s" t="r" from="2304250449" to="2304251200" ts="2304250449" ts-tts="23-04-25 04:49:19.986"/>
+    <m id="r1939344" t="h" from="2304250500" to="2304251200" cat="Störung" ts="2304250859" ts-tts="23-04-25 08:59:54.416" pr="1"/>
+    <m id="r1933345" t="h" from="2304180000" to="2305312359" cat="Information" ts="2304211702" ts-tts="23-04-24 23:16:12.032" pr="3"/>
+    <ar cpth="Wiesbaden Hbf|Wiesbaden Ost|Mainz-Kastel|Hochheim(Main)|Flörsheim(Main)|Eddersheim|Hattersheim(Main)|Frankfurt-Sindlingen|Frankfurt-Höchst|Frankfurt-Nied|Frankfurt-Griesheim" ct="2304250959" l="9">
+      <m id="r147934489" t="d" c="31" ts="2304250822" ts-tts="23-04-25 08:22:32.096"/>
+      <m id="r147935841" t="d" c="31" ts="2304250854" ts-tts="23-04-25 08:54:10.559"/>
+    </ar>
+    <dp cpth="Frankfurt(M)Taunusanlage|Frankfurt(M)Hauptwache|Frankfurt(M)Konstablerwache|Frankfurt(M)Mühlberg|Offenbach(Main) Kaiserlei|Offenbach(Main) Ledermuseum|Offenbach(Main) Marktplatz|Offenbach(Main)Ost|Mühlheim(Main)|Mühlheim(Main)-Dietesheim|Steinheim(Main)|Hanau Hbf" ct="2304251000" l="9">
+      <m id="r147934489" t="d" c="31" ts="2304250822" ts-tts="23-04-25 08:22:32.096"/>
+      <m id="r147935841" t="d" c="31" ts="2304250854" ts-tts="23-04-25 08:54:10.559"/>
+    </dp>
+  </s>
+  <s id="-476124370389897193-2304250947-15" eva="8098105">
+    <ar ct="2304251026" l="6"/>
+    <dp ct="2304251027" l="6"/>
+  </s>
+  <s id="4366909792396184613-2304250918-13" eva="8098105">
+    <ar ct="2304250956" l="2">
+      <m id="r147938467" t="d" c="43" ts="2304250951" ts-tts="23-04-25 09:51:46.065"/>
+    </ar>
+    <dp ct="2304250957" l="2">
+      <m id="r147938467" t="d" c="43" ts="2304250951" ts-tts="23-04-25 09:51:46.065"/>
+    </dp>
+  </s>
+  <s id="345299546058176949-2304250935-17" eva="8098105">
+    <m id="r1933345" t="h" from="2304180000" to="2305312359" cat="Information" ts="2304211702" ts-tts="23-04-24 23:16:12.033" pr="3"/>
+    <ar ct="2304251014" l="3"/>
+    <dp ct="2304251015" l="3"/>
+  </s>
+  <s id="-8487152056277191919-2304250939-13" eva="8098105">
+    <m id="r109766s" t="r" from="2304250449" to="2304251200" ts="2304250449" ts-tts="23-04-25 04:49:19.986"/>
+    <m id="r1939344" t="h" from="2304250500" to="2304251200" cat="Störung" ts="2304250859" ts-tts="23-04-25 08:59:54.416" pr="1"/>
+    <ar cpth="Wiesbaden Hbf|Wiesbaden Ost|Mainz-Kastel|Hochheim(Main)|Flörsheim(Main)|Eddersheim|Hattersheim(Main)|Frankfurt-Sindlingen|Frankfurt-Höchst|Frankfurt-Nied|Frankfurt-Griesheim" ct="2304251028" l="9">
+      <m id="r147934498" t="d" c="31" ts="2304250822" ts-tts="23-04-25 08:22:49.292"/>
+      <m id="r147935920" t="d" c="31" ts="2304250855" ts-tts="23-04-25 08:55:54.502"/>
+    </ar>
+    <dp cpth="Frankfurt(M)Taunusanlage|Frankfurt(M)Hauptwache|Frankfurt(M)Konstablerwache|Frankfurt(M)Mühlberg|Offenbach(Main) Kaiserlei|Offenbach(Main) Ledermuseum|Offenbach(Main) Marktplatz|Offenbach(Main)Ost|Mühlheim(Main)|Mühlheim(Main)-Dietesheim|Steinheim(Main)|Hanau Hbf" ct="2304251029" l="9">
+      <m id="r147934498" t="d" c="31" ts="2304250822" ts-tts="23-04-25 08:22:49.292"/>
+      <m id="r147935920" t="d" c="31" ts="2304250855" ts-tts="23-04-25 08:55:54.502"/>
+    </dp>
+  </s>
+  <s id="-7802105957581103546-2304250931-13" eva="8098105">
+    <m id="r109766s" t="r" from="2304250449" to="2304251200" ts="2304250449" ts-tts="23-04-25 04:49:19.987"/>
+    <m id="r1939344" t="h" from="2304250500" to="2304251200" cat="Störung" ts="2304250859" ts-tts="23-04-25 08:59:54.416" pr="1"/>
+    <m id="r1933345" t="h" from="2304180000" to="2305312359" cat="Information" ts="2304211702" ts-tts="23-04-24 23:16:12.033" pr="3"/>
+    <ar cpth="Frankfurt(Main)Süd|Frankfurt(M)Lokalbahnhof|Frankfurt(M)Konstablerwache|Frankfurt(M)Hauptwache|Frankfurt(M)Taunusanlage" ct="2304251002" l="9">
+      <m id="r147935639" t="d" c="31" ts="2304250848" ts-tts="23-04-25 08:48:42.614"/>
+      <m id="r147935641" t="f" c="0" ts="2304250848" ts-tts="23-04-25 08:48:42.614"/>
+    </ar>
+    <dp cpth="Frankfurt-Niederrad|Frankfurt am Main - Stadion|Frankfurt(Main)-Gateway Gardens|Frankfurt(M) Flughafen Regionalbf|Kelsterbach|Raunheim|Rüsselsheim|Rüsselsheim Opelwerk|Mainz-Bischofsheim|Mainz-Kastel|Wiesbaden Ost|Wiesbaden Hbf" ct="2304251003" l="9">
+      <m id="r147935639" t="d" c="31" ts="2304250848" ts-tts="23-04-25 08:48:42.614"/>
+      <m id="r147935641" t="f" c="0" ts="2304250848" ts-tts="23-04-25 08:48:42.614"/>
+      <m id="r147938161" t="f" c="0" ts="2304250944" ts-tts="23-04-25 09:44:50.257"/>
+    </dp>
+  </s>
+  <s id="8501785964872033349-2304250934-12" eva="8098105">
+    <m id="r1933345" t="h" from="2304180000" to="2305312359" cat="Information" ts="2304211702" ts-tts="23-04-24 23:16:12.032" pr="3"/>
+    <ar ct="2304250959" l="4"/>
+    <dp ct="2304251000" l="4"/>
+  </s>
+</timetable>

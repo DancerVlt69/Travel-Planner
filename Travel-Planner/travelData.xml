@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+-<timetable station="Velten(Mark)">
+
+
+  -<s id="87995234038655619-2304251112-5">
+
+    <tl n="3608" c="RE" o="800161" t="p" f="N"/>
+
+    <ar ppth="Berlin-Charlottenburg|Berlin-Spandau|Falkensee|Hennigsdorf(b Berlin)" l="6" pp="1" pt="2304251157"/>
+
+    <dp ppth="Kremmen|Beetz-Sommerfeld|Neuruppin Rheinsberger Tor|Neuruppin West|Walsleben|Netzeband|Fretzdorf|Dossow(Prign)|Wittstock(Dosse)|Liebenthal(Prignitz)|Heiligengrabe|Pritzwalk|Groß Pankow|Perleberg|Weisen|Wittenberge" l="6" pp="1" pt="2304251158"/>
+
+  </s>
+
+
+  -<s id="5344676821668677854-2304251113-2">
+
+    <tl n="18564" c="RB" o="800161" t="p" f="N"/>
+
+    <ar ppth="Hennigsdorf(b Berlin)" l="55" pp="1" pt="2304251119"/>
+
+    <dp ppth="Bärenklau|Vehlefanz|Schwante|Kremmen" l="55" pp="1" pt="2304251121"/>
+
+  </s>
+
+
+  -<s id="5462877328482740480-2304251006-14">
+
+    <tl n="3627" c="RE" o="800161" t="p" f="N"/>
+
+    <ar ppth="Wittenberge|Weisen|Perleberg|Groß Pankow|Pritzwalk|Heiligengrabe|Liebenthal(Prignitz)|Wittstock(Dosse)|Neuruppin West|Neuruppin Rheinsberger Tor|Wustrau-Radensleben|Beetz-Sommerfeld|Kremmen" l="6" pp="2" pt="2304251157"/>
+
+    <dp ppth="Hennigsdorf(b Berlin)|Falkensee|Berlin-Spandau|Berlin-Charlottenburg" l="6" pp="2" pt="2304251158"/>
+
+  </s>
+
+
+  -<s id="-8848913395208068495-2304251106-5">
+
+    <tl n="18563" c="RB" o="800161" t="p" f="N"/>
+
+    <ar ppth="Kremmen|Schwante|Vehlefanz|Bärenklau" l="55" pp="2" pt="2304251119"/>
+
+    <dp ppth="Hennigsdorf(b Berlin)" l="55" pp="2" pt="2304251119"/>
+
+  </s>
+
+</timetable>
