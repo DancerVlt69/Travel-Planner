@@ -1,0 +1,11 @@
+{
+	"button_search": "Suchen...",
+	"button_about": "Über...",
+	"button_exit": "Beenden",
+
+	"program_name": "Zug-Auskunft",
+	"program_author": "Autor",
+	"program_version": "Version",
+
+	"station_name": "Station"
+}
