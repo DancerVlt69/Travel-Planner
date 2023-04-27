@@ -1,4 +1,9 @@
 {
+	"applicationName": "TravelPlanner",
+	"applicationDescription": "A small Windows Application to search for Train Departeure Data of the German Railroad Company 'Deutsche Bahn AG'",
+	"versionNumber": "0.0.0.4",
+	"versionStatus": "Beta",
+
 	"clientId": "",
 	"clientApi": ""
 }
