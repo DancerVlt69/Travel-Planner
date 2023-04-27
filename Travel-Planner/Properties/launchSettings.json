@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TravelPlanner": {
+      "commandName": "Project",
+      "nativeDebugging": false
+    }
+  }
+}

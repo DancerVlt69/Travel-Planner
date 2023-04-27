@@ -9,6 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove=".env\**" />
+    <EmbeddedResource Remove=".env\**" />
+    <None Remove=".env\**" />
+    <Page Remove=".env\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FubarCoder.RestSharp.Portable.Core" Version="4.0.8" />
     <PackageReference Include="FubarCoder.RestSharp.Portable.Encodings" Version="4.0.8" />
     <PackageReference Include="FubarCoder.RestSharp.Portable.HttpClient" Version="4.0.8" />

@@ -18,11 +18,11 @@
         <Button x:Name="showStartTime" Content="Time" Margin="369,57,0,0" VerticalAlignment="Top" Height="30" Click="showTime_Click" HorizontalAlignment="Left" Width="70" IsEnabled="False"/>
 
         <ListBox x:Name="listTrainStations" Margin="16,92,0,30" d:ItemsSource="{d:SampleData ItemCount=5}" RenderTransformOrigin="-0.775,1.116" HorizontalAlignment="Left" Width="324" MinHeight="55" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" SelectionChanged="listTrainStations_SelectionChanged" Background="#FF1F1F1F" Foreground="#FFFAFAFA"/>
-        <ListBox x:Name="listStartTime" Margin="369,110,81,30" d:ItemsSource="{d:SampleData ItemCount=5}" RenderTransformOrigin="-0.775,1.116" MinHeight="55" MinWidth="300" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Background="#FF1F1F1F" Foreground="#FFFAFAFA"/>
+        <ListBox x:Name="listStartTime" Margin="369,112,81,30" d:ItemsSource="{d:SampleData ItemCount=5}" RenderTransformOrigin="-0.775,1.116" MinHeight="55" MinWidth="300" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Background="#FF1F1F1F" Foreground="#FFFAFAFA"/>
 
         <Button Content="about" Margin="0,0,2,59" HorizontalAlignment="Right" Width="70" Click="about" Height="23" VerticalAlignment="Bottom"/>
         <Button Content="exit"  Margin="0,0,2,30" HorizontalAlignment="Right" Width="70" Click="exit" Height="23" VerticalAlignment="Bottom"/>
         <TextBox x:Name="inputDummy" Height="20" Margin="369,92,81,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Focusable="False" IsHitTestVisible="False" IsTabStop="False" UndoLimit="0" IsEnabled="False" Foreground="#FFFAFAFA" Background="#FF1F1F1F"/>
-        <TextBlock Margin="369,92,81,0" TextWrapping="Wrap" Height="20" VerticalAlignment="Top"><Run Text="    "/><Run Language="de-de" Text=" "/><Run Text="Date    | Time | Destination, via"/></TextBlock>
+        <TextBlock Margin="369,92,81,0" TextWrapping="Wrap" Height="20" VerticalAlignment="Top" Background="#FF585858"><Run Text="    "/><Run Text=" "/><Run Text=" "/><Run Text="Date "/><Run Text=" "/><Run Text="   | "/><Run Text=" "/><Run Language="de-de" Text=" "/><Run Text="Time"/><Run Language="de-de" Text=" "/><Run Text=" "/><Run Text=" "/><Run Text="| "/><Run Text=" "/><Run Text=" "/><Run Language="de-de" Text=" "/><Run Text="Platform"/><Run Language="de-de" Text=" "/><Run Text=" "/><Run Text="  |  "/><Run Text="Destination, via"/></TextBlock>
     </Grid>
 </Window>

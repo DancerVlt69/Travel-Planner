@@ -11,6 +11,9 @@
 *.sln.docstates
 
 # User-specific files (MonoDevelop/Xamarin Studio)
+Stausimulation/
+.env/
+.gitignore
 *.userprefs
 
 # Mono auto generated files
