@@ -1,9 +1,11 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Net;
 using System.Windows;
 using System.Xml;
+using System.Text.Json;
 using RestSharp;
+using System.Collections.Generic;
 
 namespace TravelPlanner
 {
@@ -25,13 +27,16 @@ namespace TravelPlanner
         private void search_Click(object sender, RoutedEventArgs eventArgs)
         {
             showStartTime.IsEnabled = false;
+
+            var clientdata = ReadJsonFile.getClientData();
+
             var baseUrl = "https://apis.deutschebahn.com/db-api-marketplace/apis/timetables/v1/";
             var urlEnc = WebUtility.UrlEncode(inputTrainStation.Text);
 
             var client = new RestClient(baseUrl + "station/" + urlEnc);
             var request = new RestRequest("", Method.Get);
-            request.AddHeader("DB-Client-Id", clientId);
-            request.AddHeader("DB-Api-Key", clientAPI);
+            request.AddHeader("DB-Client-Id", clientdata[0]);
+            request.AddHeader("DB-Api-Key", clientdata[1]);
             request.AddHeader("accept", "application/xml");
             RestResponse response = client.Execute(request);
 
@@ -52,10 +57,10 @@ namespace TravelPlanner
             }
         }
 
-         static class GetData
+        static class GetData
         {
-            
-             public static String getDBData()
+
+            public static String getDBData()
             {
                 var baseUrl = "https://apis.deutschebahn.com/db-api-marketplace/apis/timetables/v1/";
                 var startDate = DateTime.Now.ToString("yyMMdd");
@@ -66,7 +71,7 @@ namespace TravelPlanner
                 return "";
             }
 
-            private static String ClientUrlString (String baseUrl, String urlEncodeString)
+            private static String ClientUrlString(String baseUrl, String urlEncodeString)
             {
                 var pathString = "station";
                 var clientUrlString = String.Format("{0}{1}/{2}", baseUrl, pathString, urlEncodeString);
@@ -84,13 +89,14 @@ namespace TravelPlanner
 
             public static void requestData(RestClient client)
             {
+                var clientdata = ReadJsonFile.getClientData();
                 var request = new RestRequest("", Method.Get);
-                request.AddHeader("DB-Client-Id", clientId);
-                request.AddHeader("DB-Api-Key", clientAPI);
+                request.AddHeader("DB-Client-Id", clientdata[0]);
+                request.AddHeader("DB-Api-Key", clientdata[1]);
                 request.AddHeader("accept", "application/xml");
                 RestResponse response = client.Execute(request);
                 var doc = new XmlDocument();
-                
+
                 doc.LoadXml(response.Content.ToString());
             }
         }
@@ -104,12 +110,13 @@ namespace TravelPlanner
             var startDate = DateTime.Now.ToString("yyMMdd");
             var startTime = DateTime.Now.ToString("HH");
             var stationId = ((CreateTrainStation)listTrainStations.SelectedItem).StationId;
-            
+
             var client = new RestClient(baseUrl + "plan/" + stationId + "/" + startDate + "/" + startTime);
 
             var request = new RestRequest("", Method.Get);
-            request.AddHeader("DB-Client-Id", clientId);
-            request.AddHeader("DB-Api-Key", clientAPI);
+            var clientdata = ReadJsonFile.getClientData();
+            request.AddHeader("DB-Client-Id", clientdata[0]);
+            request.AddHeader("DB-Api-Key", clientdata[1]);
             request.AddHeader("accept", "application/xml");
             RestResponse response = client.Execute(request);
             var doc = new XmlDocument();
@@ -122,7 +129,7 @@ namespace TravelPlanner
             foreach (XmlNode node in nodes)
             {
                 listStartTime.Items.Clear();
-                
+
                 foreach (XmlNode node2 in nodes2)
                 {
                     String travelTime = node2.Attributes["pt"].Value;
@@ -130,10 +137,10 @@ namespace TravelPlanner
                     String platformTrack = node2.Attributes["pp"].Value;
 
                     // TODO - String newViaStation = getNewViaString(destStation); 
-                    
+
                     NewDateString newDateString = new NewDateString(travelTime);
                     NewTimeString newTimeString = new NewTimeString(travelTime);
-                    NewPlatform newPlatformString = new NewPlatform(platformTrack);
+                    NewPlatformString newPlatformString = new NewPlatformString(platformTrack);
                     String newDestStation = getNewStationString(destStation);
 
                     String newListEntry = String.Format(" {0}  |   {1}   |{2}|  {3}", newDateString, newTimeString, newPlatformString, newDestStation);
@@ -141,9 +148,9 @@ namespace TravelPlanner
                     listStartTime.Items.Add(newListEntry);
 
                 }
-            }    
+            }
         }
-           
+
         private void listTrainStations_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             showStartTime.IsEnabled = true;
@@ -183,155 +190,33 @@ namespace TravelPlanner
                 var newStationString = String.Format("{0}", newDestString);
                 return newStationString;
             }
-
-            //Console.WriteLine(); // only for Debug
-            // Console.WriteLine(newStationString); // only for Debug
-            
         }
 
-        class CreateTrainStation
+        public class ClientData
         {
-            public CreateTrainStation(String stationId, String stationName)
-            {
-                this.stationName = stationName;
-                this.stationId = stationId;
-            }
-
-            String stationId;
-            public String StationId { get { return stationId; } }
-
-            String stationName;
-            public String StationName
-            { get
-                {
-                    return stationName;
-                }
-            }
-
-            public override String ToString()
-            {
-                return StationName;
-            }
+            public String ClientID { get; set; }
+            public String ClientAPI { get; set; }
         }
-
-        class NewTimeString
+        
+        public static class ReadJsonFile
         {
-            public NewTimeString(String travelTime)
+            public static List<String> getClientData()
             {
-                this.travelTime = travelTime;
-            }
+                string text = File.ReadAllText(@"../../../.env/clientdata.json");
+                var clientData = JsonSerializer.Deserialize<ClientData>(text);
 
-            String travelTime;
-            String newTravelTime;
-            String t1String; String t2String;
+                var id = clientData.ClientID;
+                var api = clientData.ClientAPI;
 
-            public String TravelTime { get { return travelTime; } }
-            public String NewTravelTime
-            {
-                get
-                {
-                    for (int i = 6; i < travelTime.Length - 2; i++)
-                    {
-                        t1String += travelTime[i];
-                    }
+                // Create a list of strings.
+                var textValue = new List<String>();
+                textValue.Add(id);
+                textValue.Add(api);
 
-                    for (int i = 8; i < travelTime.Length; i++)
-                    {
-                        t2String += travelTime[i];
-                    }
-
-                    newTravelTime = String.Format("{0}:{1}", t1String, t2String);
-                    return newTravelTime;
-                }
-            }
-
-            public override String ToString()
-            {
-                return NewTravelTime;
+                return textValue;
             }
         }
-
-        class NewDateString
-        {
-            public NewDateString(String travelDate)
-            {
-                this.travelDate = travelDate;
-            }
-
-            String travelDate; String newTravelDate;
-            String d1String; String d2String; String d3String;
-            public String TravelDate { get { return travelDate; } }
-            public String NewTravelDate
-            {
-                get
-                {
-                    for (int i = travelDate.Length - 10; i <= 1; i++)
-                    {
-                        d3String += travelDate[i];
-                    }
-                    for (int i = travelDate.Length - 8; i <= 3; i++)
-                    {
-                        d2String += travelDate[i];
-                    }
-                    for (int i = travelDate.Length - 6; i <= 5; i++)
-                    {
-                        d1String += travelDate[i];
-                    }
-
-                    newTravelDate = String.Format("{0}.{1}.{2}", d1String, d2String, d3String);
-                    return newTravelDate;
-                }
-            }
-
-            public override String ToString()
-            {
-                return NewTravelDate;
-            }
-        }
-
-        class NewPlatform
-        {
-            public NewPlatform(String platformTrack)
-            {
-                this.platformTrack = platformTrack;
-            }
-
-            String platformTrack; String newPlatformTrack;
-
-            public String PlaformTrack { get { return platformTrack; } }
-
-            public String NewPlatformTrack
-            {
-                get
-                {
-                    String nPT = String.Format("Track {0}", platformTrack);
-                    int c1 = platformTrack.Length;
-                    int c2 = nPT.Length;
-                    int c3;
-                    if (c1 >= 2) { c3 = 14; } else { c3 = 15; }
-                    while (c2 < c3)
-                    {
-                        nPT = nPT.PadLeft(c2 + 1, ' ').PadRight(c2 + 2, ' ');
-                     
-                        c2 = nPT.Length;
-                    }
-                    
-                    return nPT;
-                }
-            }
-            public override String ToString()
-            {
-                return NewPlatformTrack;
-            }
-        }
-       
-
-
-
-
-
-
-
+        
 
         private void about(object sender, RoutedEventArgs eventArgs)
         {
@@ -346,24 +231,6 @@ namespace TravelPlanner
             if (result == MessageBoxResult.Yes) { Close(); }
                     
             return;
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        const string clientId = "c4f0cca9062888a04823e3b5ea338707";
-        const string clientAPI = "b7d64752022ff03de15659ccf3c9d8bf";
-
-   
+        }   
     }
 }
