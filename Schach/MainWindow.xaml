@@ -1,0 +1,13 @@
+﻿<Window x:Class="Schach.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        
+        mc:Ignorable="d"
+        Title="Schach" Height="750" Width="1400" WindowStartupLocation="CenterScreen" Background="#FF1F1F1F" Foreground="#FFFAFAFA">
+    <Canvas Name="myCanvas">
+        <Rectangle Name="playGround" HorizontalAlignment="Center" Height="492" Canvas.Left="446" Stroke="#FFADA1A1" Canvas.Top="120" Width="576"/>
+
+    </Canvas>
+</Window>
